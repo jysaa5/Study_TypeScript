@@ -1,0 +1,4 @@
+enum Shoes {
+  Nike,
+  Adidas,
+}
