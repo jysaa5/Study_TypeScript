@@ -1,4 +1,4 @@
-interface Person1 {
+interface Person11 {
   name: string;
   age: number;
 }
@@ -9,12 +9,12 @@ type Person2 = {
   age: number;
 };
 
-var seho: Person1 = {
+var seho1: Person11 = {
   name: "주연",
   age: 17,
 };
 
-var seho: Person2 = {
+var seho2: Person2 = {
   name: "주연",
   age: 17,
 };

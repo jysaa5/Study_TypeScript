@@ -35,4 +35,4 @@ function askQuestion(answer: Answer) {
 // askQuestion("Yes");
 
 askQuestion(Answer.Yes);
-askQuestion("Yes");
+// askQuestion("Yes");
