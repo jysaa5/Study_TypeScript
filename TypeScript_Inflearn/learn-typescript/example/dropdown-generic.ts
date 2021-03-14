@@ -14,6 +14,11 @@ interface ProductNumber {
   selected: boolean;
 }
 
+interface TrueFalse {
+  value: boolean;
+  selected: boolean;
+}
+
 const numberOfProducts: ProductNumber[] = [
   { value: 1, selected: true },
   { value: 2, selected: false },

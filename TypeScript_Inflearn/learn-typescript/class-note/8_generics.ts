@@ -55,3 +55,14 @@ const str1 = logText4<string>("abc");
 str1.split(""); // 문자열 함수를 사용.
 
 const login = logText4<boolean>(true);
+
+// 인터페이스에 제네릭을 선언하는 방법
+interface Dropdown1 {
+  value: string;
+  selected: boolean;
+}
+
+interface Dropdown2<T> {
+  value: T;
+  selected: boolean;
+}
