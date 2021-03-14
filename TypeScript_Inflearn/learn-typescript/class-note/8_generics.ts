@@ -72,7 +72,7 @@ interface Dropdown2<T> {
 const obj2: Dropdown2<string> = { value: "abc", selected: false };
 const obj3: Dropdown2<number> = { value: 10, selected: false };
 
-/* 제네릭의 타입 제한 */
+/* 제네릭의 타입 제한 1 */
 function legTextLength<T>(text: T[]): T[] {
   console.log(text.length);
   text.forEach(function (text) {
@@ -93,4 +93,20 @@ function logTextLength<T extends LengthType>(text: T): T {
 }
 
 logTextLength("a");
-logTextLength(10);
+logTextLength({ length: 10 });
+
+/* 제네릭 타입 제한 3 - keyof */
+interface ShoppingItem {
+  name: string;
+  price: number;
+  stock: number;
+}
+
+// 미리 정의되어있는 인터페이스의 키 값들만 들어갈 수 있게 제한 = keyof
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+  return itemOption;
+}
+
+// getShoppingItemOption(10);
+// getShoppingItemOption<string>("a");
+getShoppingItemOption("name");
