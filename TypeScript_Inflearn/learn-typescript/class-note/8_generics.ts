@@ -45,7 +45,7 @@ function logText3(text: string | number) {
 logText3("a");
 logText3(10);
 
-// 제네릭
+/* 제네릭 */
 function logText4<T>(text: T): T {
   console.log(text);
   return text;
@@ -56,13 +56,41 @@ str1.split(""); // 문자열 함수를 사용.
 
 const login = logText4<boolean>(true);
 
-// 인터페이스에 제네릭을 선언하는 방법
+/* 인터페이스에 제네릭을 선언하는 방법 */
 interface Dropdown1 {
   value: string;
   selected: boolean;
 }
 
+const obj: Dropdown1 = { value: "abc", selected: false };
+
 interface Dropdown2<T> {
   value: T;
   selected: boolean;
 }
+
+const obj2: Dropdown2<string> = { value: "abc", selected: false };
+const obj3: Dropdown2<number> = { value: 10, selected: false };
+
+/* 제네릭의 타입 제한 */
+function legTextLength<T>(text: T[]): T[] {
+  console.log(text.length);
+  text.forEach(function (text) {
+    console.log(text);
+  });
+  return text;
+}
+legTextLength<string>(["hi", "abc"]);
+
+/* 제네릭 타입 제한 2 - 정의된 타입 이용하기 */
+interface LengthType {
+  length: number;
+}
+
+function logTextLength<T extends LengthType>(text: T): T {
+  text.length;
+  return text;
+}
+
+logTextLength("a");
+logTextLength(10);
