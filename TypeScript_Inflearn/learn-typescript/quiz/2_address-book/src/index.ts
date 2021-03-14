@@ -1,5 +1,6 @@
 interface PhoneNumberDictionary {
   [phone: string]: {
+    // 어떤 키 값이 오던 상관 없음. {키 : 벨류}의 배열
     num: number;
   };
 }
@@ -12,12 +13,12 @@ interface Contact {
 
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
-function fetchContacts() {
+function fetchContacts(): Promise {
   // TODO: 아래 변수의 타입을 지정해보세요.
   const contacts = [
     {
-      name: 'Tony',
-      address: 'Malibu',
+      name: "Tony",
+      address: "Malibu",
       phones: {
         home: {
           num: 11122223333,
@@ -28,8 +29,8 @@ function fetchContacts() {
       },
     },
     {
-      name: 'Banner',
-      address: 'New York',
+      name: "Banner",
+      address: "New York",
       phones: {
         home: {
           num: 77788889999,
@@ -37,8 +38,8 @@ function fetchContacts() {
       },
     },
     {
-      name: '마동석',
-      address: '서울시 강남구',
+      name: "마동석",
+      address: "서울시 강남구",
       phones: {
         home: {
           num: 213423452,
@@ -49,7 +50,7 @@ function fetchContacts() {
       },
     },
   ];
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(contacts), 2000);
   });
 }
@@ -64,23 +65,23 @@ class AddressBook {
   }
 
   fetchData() {
-    fetchContacts().then(response => {
+    fetchContacts().then((response) => {
       this.contacts = response;
     });
   }
 
   /* TODO: 아래 함수들의 파라미터 타입과 반환 타입을 지정해보세요 */
   findContactByName(name) {
-    return this.contacts.filter(contact => contact.name === name);
+    return this.contacts.filter((contact) => contact.name === name);
   }
 
   findContactByAddress(address) {
-    return this.contacts.filter(contact => contact.address === address);
+    return this.contacts.filter((contact) => contact.address === address);
   }
 
   findContactByPhone(phoneNumber, phoneType: string) {
     return this.contacts.filter(
-      contact => contact.phones[phoneType].num === phoneNumber
+      (contact) => contact.phones[phoneType].num === phoneNumber
     );
   }
 
@@ -89,11 +90,11 @@ class AddressBook {
   }
 
   displayListByName() {
-    return this.contacts.map(contact => contact.name);
+    return this.contacts.map((contact) => contact.name);
   }
 
   displayListByAddress() {
-    return this.contacts.map(contact => contact.address);
+    return this.contacts.map((contact) => contact.address);
   }
   /* ------------------------------------------------ */
 }
