@@ -3,6 +3,7 @@
 //   return items;
 // }
 
+/* fetchItems(): string 배열 */
 // var result = fetchItems();
 // console.log(result);
 
