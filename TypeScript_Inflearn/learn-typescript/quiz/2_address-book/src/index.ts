@@ -1,21 +1,22 @@
-interface PhoneNumberDictionary {
-  [phone: string]: {
-    // 어떤 키 값이 오던 상관 없음. {키 : 벨류}의 배열
-    num: number;
-  };
-}
+// interface PhoneNumberDictionary {
+//   [phone: string]: {
+//     // 어떤 키 값이 오던 상관 없음. {키 : 벨류}의 배열
+//     num: number;
+//   };
+// }
 
-interface Contact {
-  name: string;
-  address: string;
-  phones: PhoneNumberDictionary;
-}
+// interface Contact {
+//   name: string;
+//   address: string;
+//   phones: PhoneNumberDictionary;
+// }
 
-enum PhoneType {
-  Home = "home",
-  Office = "office",
-  Studio = "studio",
-}
+// enum PhoneType {
+//   Home = "home",
+//   Office = "office",
+//   Studio = "studio",
+// }
+import { Contact, PhoneType } from "./types";
 
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
